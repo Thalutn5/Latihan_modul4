@@ -14,6 +14,20 @@ Jawab :
 		    res = (filler(buf, de->d_name, &st, 0));
 			  if(res!=0) break;
 	    }
+	 
+- Untuk menjalankannya 
+
+	  gcc -Wall `pkg-config fuse --cflags` soal1.c -o soal1 `pkg-config fuse --libs`
+	 
+- Lalu kita membuat sebuah folder untuk menampungnya yang bernama tampung
+
+	  mkdir tampung
+	  
+- Lalu kita jalankan dengan menggunakan 
+
+	  ./soal1 tampung
+	
+- Maka is dari folder tampung adalah isi dari Download yang ditampangkan eksteninya (.bak)
 
 # Soal 2
 Buat sebuah file system yang mengarah ke /home/[user]/Documents. Pada saat membuka file dengan ekstensi .pdf, .doc, .txt pada direktori Documents akan muncul pesan error “Terjadi kesalahan! File berisi konten berbahaya.” dan tidak dapat membaca file tersebut. Setelah memunculkan pesan error, file tersebut diganti namanya menjadi <namafile>.<ekstensi>.ditandai. Setelah memunculkan pesan error dan mengganti nama file tadi, file tersebut otomatis dipindahkan ke direktori rahasia. Jika folder rahasia belum ada, maka secara otomatis akan membuat direktori “rahasia” sebelum dipindahkan dan file tidak bisa di read write execute.
